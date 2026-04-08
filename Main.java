@@ -30,30 +30,24 @@ public class Main {
 
 //Q2 Display the number of occurrences
         System.out.println("\nQ2 Display the number of occurrences");
-        int[] numbers = {1, 5, 3, 1, 3, 1};
+      
+        int[] originalArray = {1, 1, 1, 3, 3, 5};
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Enter the number to check: ");
+        int target = input.nextInt(); 
+        
+        int count = 0;
 
-        for (int i = 0; i < numbers.length; i++) {
-
-            for (int j = 0; j < numbers.length - 1; j++) {
-                if (numbers[j] > numbers[j + 1]) {
-                    int temp = numbers[j];
-                    numbers[j] = numbers[j + 1];
-                    numbers[j + 1] = temp;
-                }
-            }
-        }
-
-        System.out.println("Occurrences:");
-        for (int i = 0; i < numbers.length; i++) {
-            int count = 1;
-
-            while (i < numbers.length - 1 && numbers[i] == numbers[i + 1]) {
+        for (int i = 0; i < originalArray.length; i++) {
+            if (originalArray[i] == target) {
                 count++;
-                i++;
             }
-
-            System.out.println(numbers[i] + " occurs " + count + " times");
         }
+        System.out.println(target + " occurs " + count + " " + "time");
+    }
+}
+
 
 
 //Q3 Display the biggest numbers
